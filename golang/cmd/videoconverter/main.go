@@ -67,6 +67,7 @@ func main() {
 		return
 	}
 	defer db.Close()
+
 	rabbitMQURL := getEnvOrDefault("RABBITMQ_URL", "amqp://guest:guest@rabbitmq:5672/")
 	rabbitClient, err := rabbitmq.NewRabbitClient(ctx, rabbitMQURL)
 	if err != nil {
